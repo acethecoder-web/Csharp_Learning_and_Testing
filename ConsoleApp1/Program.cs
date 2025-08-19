@@ -7,7 +7,6 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
             String StudFirstName, StudMiddleName, StudLastName, StudCourse;
             int RealStudAge, YearNow = 2025, StudBirthYear, index;
             float EnglishGrade, MathGrade, ScienceGrade, IctGrade, AveGrade;
@@ -20,6 +19,7 @@ namespace ConsoleApp1
 
             string[] username = { "ace", "gerick", "real", "cherwin", "mark" };
             string[] password = { "123", "456", "789", "1011", "1213" };
+
 
             //=====================================================================//
 
@@ -71,7 +71,31 @@ namespace ConsoleApp1
             IctGrade = Convert.ToSingle(Console.ReadLine());
             AveGrade = (MathGrade + EnglishGrade + ScienceGrade + IctGrade) / 4;
             Console.WriteLine("\n TOTAL AVERAGE OF THE GRADES  : " + AveGrade);
+
+            if (AveGrade >= 75)
+            {
+                Console.WriteLine("PASSED");
+            }
+            else
+            {
+                Console.WriteLine("FAILED");
+            }
+            ;
+
             Console.WriteLine("=============================================");
+
+            /*
+
+                                        Grade Range	Remark
+
+                            96 – 100	Excellent
+                            90 – 95	Very Good
+                            85 – 89	Good
+                            80 – 84	Fair
+                            75 – 79	Passed
+                            Below 75	Failed
+
+            */
 
             //======================================================================//
 

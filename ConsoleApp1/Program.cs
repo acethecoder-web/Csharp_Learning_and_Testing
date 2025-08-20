@@ -7,7 +7,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            String StudFirstName, StudMiddleName, StudLastName, StudCourse;
+
+            String StudFirstName, StudMiddleName, StudLastName, StudCourse, UserName = "aceshapiz22", PassWord = "hapiz123", UserNameInput, PasswordInput;
             int RealStudAge, YearNow = 2025, StudBirthYear, index;
             float EnglishGrade, MathGrade, ScienceGrade, IctGrade, AveGrade;
 
@@ -20,99 +21,95 @@ namespace ConsoleApp1
             string[] username = { "ace", "gerick", "real", "cherwin", "mark" };
             string[] password = { "123", "456", "789", "1011", "1213" };
 
-
             //=====================================================================//
 
-            Console.WriteLine("]\n  ========== ENROLLMENT SYSTEM V.01  =========="); 
-            Console.Write("\n \n ========   PRESS ENTER TO CONTINUE ....   ========");
+            Console.WriteLine("]\n==========           ENROLLMENT SYSTEM V.01        ===========");
+            Console.Write("\n \n ========   PRESS ENTER YOUR CREDENTIALS TO CONTINUE   ========");
             Console.ReadKey();
+            Console.Write("\n \nENTER YOUR USERNAME: ");
 
-            //=====================================================================//
+            UserNameInput = Console.ReadLine();
+            Console.Write("ENTER YOUR PASSWORD: ");
+            PasswordInput = Console.ReadLine();
 
-            Console.Write("\nEnter Student First Name       : ");
-            StudFirstName = Console.ReadLine();
-
-            Console.Write("Enter Student Middle Name      : ");
-            StudMiddleName = Console.ReadLine();
-
-            Console.Write("Enter Student Last Name        : ");
-            StudLastName = Console.ReadLine();
-            
-            Console.Write("Enter Student Birthyear        : ");
-            StudBirthYear = Convert.ToInt32(Console.ReadLine());
-          
-            Console.Write("Enter Student Preferred Course : ");
-            StudCourse = Console.ReadLine();
-
-            RealStudAge = YearNow - StudBirthYear;
-            //======================================================================//
-             
-            Console.WriteLine("\n=============================================");
-            Console.WriteLine("\nYour full name is " + StudLastName + ", " 
-                                                     + StudFirstName + " "  
-                                                     + StudMiddleName + " , You are "
-                                                     + RealStudAge + ", and you're interested to enroll in " 
-                                                     + StudCourse );
-
-            Console.WriteLine("\nis this Correct? Y OR N");
-            Console.ReadKey();
-
-            //======================================================================//
-
-            Console.WriteLine("\nSTUDENT'S GRADE LAST SCHOOL YEAR");
-            Console.WriteLine("\n \n=============================================");
-            Console.Write("Enter Student's Grade in Math       : ");
-            MathGrade = Convert.ToSingle(Console.ReadLine());
-            Console.Write("Enter Student's Grade in English    : ");
-            EnglishGrade = Convert.ToSingle(Console.ReadLine());
-            Console.Write("Enter Student's Grade in Science    : ");
-            ScienceGrade = Convert.ToSingle(Console.ReadLine());
-            Console.Write("Enter Student's Grade in Ict        : ");
-            IctGrade = Convert.ToSingle(Console.ReadLine());
-            AveGrade = (MathGrade + EnglishGrade + ScienceGrade + IctGrade) / 4;
-            Console.WriteLine("\n TOTAL AVERAGE OF THE GRADES  : " + AveGrade);
-
-            if (AveGrade >= 75)
+            if (UserNameInput.Equals(UserName, StringComparison.CurrentCultureIgnoreCase) && PasswordInput.Equals(PassWord))
             {
-                Console.WriteLine("PASSED");
+
+                //=====================================================================//
+
+                Console.WriteLine("\nWELCOME BACK" + " " + UserNameInput + "!");
+
+                Console.Write("\nEnter Student First Name       : ");
+                StudFirstName = Console.ReadLine();
+
+                Console.Write("Enter Student Middle Name      : ");
+                StudMiddleName = Console.ReadLine();
+
+                Console.Write("Enter Student Last Name        : ");
+                StudLastName = Console.ReadLine();
+
+                Console.Write("Enter Student Birthyear        : ");
+                StudBirthYear = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Student Preferred Course : ");
+                StudCourse = Console.ReadLine();
+
+                RealStudAge = YearNow - StudBirthYear;
+                //======================================================================//
+
+                Console.WriteLine("\n=============================================");
+                Console.WriteLine("\nYour full name is " + StudLastName + ", "
+                                                         + StudFirstName + " "
+                                                         + StudMiddleName + " , You are "
+                                                         + RealStudAge + ", and you're interested to enroll in "
+                                                         + StudCourse);
+
+                Console.WriteLine("\nis this Correct? Y OR N");
+                Console.ReadKey();
+
+                //======================================================================//
+
+                Console.WriteLine("\nSTUDENT'S GRADE LAST SCHOOL YEAR");
+                Console.WriteLine("\n \n=============================================");
+                Console.Write("Enter Student's Grade in Math       : ");
+                MathGrade = Convert.ToSingle(Console.ReadLine());
+                Console.Write("Enter Student's Grade in English    : ");
+                EnglishGrade = Convert.ToSingle(Console.ReadLine());
+                Console.Write("Enter Student's Grade in Science    : ");
+                ScienceGrade = Convert.ToSingle(Console.ReadLine());
+                Console.Write("Enter Student's Grade in Ict        : ");
+                IctGrade = Convert.ToSingle(Console.ReadLine());
+                AveGrade = (MathGrade + EnglishGrade + ScienceGrade + IctGrade) / 4;
+                Console.WriteLine("\n TOTAL AVERAGE OF THE GRADES  : " + AveGrade);
+
+                if (AveGrade >= 96) Console.WriteLine("EXCELLENT");
+                else if (AveGrade >= 90) Console.WriteLine("Very Good");
+                else if (AveGrade >= 85) Console.WriteLine("GOOD");
+                else if (AveGrade >= 80) Console.WriteLine("FAIR");
+                else if (AveGrade >= 75) Console.WriteLine("PASSED");
+                else Console.WriteLine("FAILED");
+
+                Console.WriteLine("=============================================");
+
+                //======================================================================//
+
+                Console.Write("\n Enter an index: ( Limit is 0-4): ");
+                index = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("\n=============================================");
+
+                Console.Write("\nINDEX    : " + index);
+                Console.Write("\nEMAIL    : " + email[index]);
+                Console.Write("\nUSERNAME : " + username[index]);
+                Console.Write("\nPASSWORD : " + password[index]);
+
+                Console.WriteLine("\n=============================================");
+
+                //======================================================================//
             }
-            else
-            {
-                Console.WriteLine("FAILED");
-            }
-            ;
-
-            Console.WriteLine("=============================================");
-
-            /*
-
-                                        Grade Range	Remark
-
-                            96 – 100	Excellent
-                            90 – 95	Very Good
-                            85 – 89	Good
-                            80 – 84	Fair
-                            75 – 79	Passed
-                            Below 75	Failed
-
-            */
-
-            //======================================================================//
-
-            Console.Write("\n Enter an index: ( Limit is 0-4): ");
-            index = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("\n=============================================");
-
-            Console.Write("\nINDEX    : " + index);
-            Console.Write("\nEMAIL    : " + email[index]);
-            Console.Write("\nUSERNAME : " + username[index]);
-            Console.Write("\nPASSWORD : " + password[index]);
-
-            Console.WriteLine("\n=============================================");
-
-            //======================================================================//
-
+            else if (UserNameInput != UserName && PasswordInput.Equals(PassWord)) Console.WriteLine("\nWRONG USERNAME / USER NOT REGISTERED");
+            else if (PasswordInput != PassWord && UserNameInput.Equals(UserName,StringComparison.CurrentCultureIgnoreCase)) Console.WriteLine("\nWRONG PASSWORD");
+            else Console.WriteLine("\nINVALID CREDENTIALS");
 
         }
     }

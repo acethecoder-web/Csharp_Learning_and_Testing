@@ -7,8 +7,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            String StudFirstName, StudMiddleName, StudLastName, StudCourse, UserName = "aceshapiz22", PassWord = "hapiz123", UserNameInput, PasswordInput, Date;
-            int RealStudAge, YearNow = 2025, StudBirthYear, index , Year, UserInputDate, UserInputYear, UserInputMonth ;
+            String StudFirstName, StudMiddleName, StudLastName, StudCourse, UserName = "aceshapiz22", PassWord = "hapiz123",
+                   UserNameInput, PasswordInput, Date, UserAnswer;
+
+            int RealStudAge, YearNow = 2025, StudBirthYear, index , Year, UserInputDate, UserInputYear, UserInputMonth,
+                    Question = (6 * 6) + 5, Life=5;
+
             float EnglishGrade, MathGrade, ScienceGrade, IctGrade, AveGrade;
             
             string[] email = {"aceshapiz6@gmail.com",
@@ -18,8 +22,8 @@ namespace ConsoleApp1
                              "markasuncion@gmail.com" };
 
             string[] username = { "ace", "gerick", "real", "cherwin", "mark" };
-            string[] password = { "123", "456", "789", "1011", "1213" };
 
+            string[] password = { "123", "456", "789", "1011", "1213" };
 
             string[] months = {"january","february","march","april","may","june",
                                "july","august","september", "october", "november","december"};
@@ -111,9 +115,6 @@ namespace ConsoleApp1
 
                 //======================================================================//
             }
-            else if (UserNameInput != UserName && PasswordInput.Equals(PassWord)) Console.WriteLine("\nWRONG USERNAME / USER NOT REGISTERED");
-            else if (PasswordInput != PassWord && UserNameInput.Equals(UserName, StringComparison.CurrentCultureIgnoreCase)) Console.WriteLine("\nWRONG PASSWORD");
-            else Console.WriteLine("\nINVALID CREDENTIALS");
 
             Console.Write("\nMONTH: ");
             UserInputMonth = Convert.ToInt32(Console.ReadLine());
@@ -121,6 +122,7 @@ namespace ConsoleApp1
             UserInputDate = Convert.ToInt32(Console.ReadLine());
             Console.Write("YEAR: ");
             UserInputYear = Convert.ToInt32(Console.ReadLine());
+
 
             switch (UserInputMonth)
             {
@@ -175,6 +177,30 @@ namespace ConsoleApp1
                     Console.Write("Invalid month input. Please enter a number between 1 and 12.");
                     break;
             }
+            //======================================================================//
+
+            while (Life > 0)
+            {
+                Console.Write("\nWHAT IS THE ANSWER OF (6 * 6) + 5? : ");
+                UserAnswer = Console.ReadLine();
+                if (UserAnswer.Equals(Question.ToString()))
+                {
+                    Console.Write("\nCorrect Answer!\n");
+                    break;
+                }
+                else
+                {
+                    Life--;
+                    Console.Write("\nWrong answer... \n \nYou have " + Life + " life(s) left.\n");
+                    if (Life == 0)
+                    {
+                        Console.WriteLine("\nYou have no more lives left. Exiting the program.");
+                        return;
+                    }
+                }
+            }
+            //======================================================================//
+
         }
     }
 }

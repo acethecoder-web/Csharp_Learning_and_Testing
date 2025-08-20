@@ -7,11 +7,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
-            String StudFirstName, StudMiddleName, StudLastName, StudCourse, UserName = "aceshapiz22", PassWord = "hapiz123", UserNameInput, PasswordInput;
-            int RealStudAge, YearNow = 2025, StudBirthYear, index;
+            String StudFirstName, StudMiddleName, StudLastName, StudCourse, UserName = "aceshapiz22", PassWord = "hapiz123", UserNameInput, PasswordInput, Date;
+            int RealStudAge, YearNow = 2025, StudBirthYear, index , Year, UserInputDate, UserInputYear, UserInputMonth ;
             float EnglishGrade, MathGrade, ScienceGrade, IctGrade, AveGrade;
-
+            
             string[] email = {"aceshapiz6@gmail.com",
                              "gerickvelasquez@gmail.com",
                              "realsullera@gmail.com",
@@ -20,6 +19,11 @@ namespace ConsoleApp1
 
             string[] username = { "ace", "gerick", "real", "cherwin", "mark" };
             string[] password = { "123", "456", "789", "1011", "1213" };
+
+
+            string[] months = {"january","february","march","april","may","june",
+                               "july","august","september", "october", "november","december"};
+
 
             //=====================================================================//
 
@@ -108,9 +112,69 @@ namespace ConsoleApp1
                 //======================================================================//
             }
             else if (UserNameInput != UserName && PasswordInput.Equals(PassWord)) Console.WriteLine("\nWRONG USERNAME / USER NOT REGISTERED");
-            else if (PasswordInput != PassWord && UserNameInput.Equals(UserName,StringComparison.CurrentCultureIgnoreCase)) Console.WriteLine("\nWRONG PASSWORD");
+            else if (PasswordInput != PassWord && UserNameInput.Equals(UserName, StringComparison.CurrentCultureIgnoreCase)) Console.WriteLine("\nWRONG PASSWORD");
             else Console.WriteLine("\nINVALID CREDENTIALS");
 
+            Console.Write("\nMONTH: ");
+            UserInputMonth = Convert.ToInt32(Console.ReadLine());
+            Console.Write("DATE: ");
+            UserInputDate = Convert.ToInt32(Console.ReadLine());
+            Console.Write("YEAR: ");
+            UserInputYear = Convert.ToInt32(Console.ReadLine());
+
+            switch (UserInputMonth)
+            {
+                case 1:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 2:
+                    Console.Write("February only have 28 days");
+                    break;
+                case 3:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 4:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 5:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 6:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 7:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 8:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 9:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 10:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 11:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                case 12:
+                    Console.Write(months[UserInputMonth - 1]);
+                    Console.Write(" " + UserInputDate + " " + UserInputYear);
+                    break;
+                default:
+                    Console.Write("Invalid month input. Please enter a number between 1 and 12.");
+                    break;
+            }
         }
     }
 }
